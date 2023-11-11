@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simple Interest Calculator</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #f4f4f4;
+      text-align: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    #container {
+        display: flex;
+        align-items: center;
+        width: 80%;
+    }
+
+    h1 {
+      color: #046380;
+      flex: center;
+    }
+
+    form {
+      width: 400px;
+      padding: 30px;
+      background-color: #7bddd8;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(255, 0, 0, 0.1);
+    }
+
+    label {
+      display: block;
+      margin-bottom: 8px;
+      color: #007f96;
+    }
+
+    input {
+      width: 100%;
+      padding: 20px;
+      margin-bottom: 15px;
+      box-sizing: border-box;
+    }
+
+    button {
+      background-color: #026168;
+      color: #fff;
+      padding: 15px 20px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    button:hover {
+      background-color: #9adb20;
+    }
+
+    #result {
+      margin-top: 20px;
+      color: #333;
+      font-size: 18px;
+    }
+  </style>
+  <script>
+    function calculateSimpleInterest() {
+      const principal = parseFloat(document.getElementById('principal').value);
+      const rate = parseFloat(document.getElementById('rate').value);
+      const time = parseFloat(document.getElementById('time').value);
+
+      const simpleInterest = (principal * rate * time) / 100;
+
+      document.getElementById('result').innerHTML = 'Simple Interest: ' + simpleInterest.toFixed(2);
+    }
+  </script>
+</head>
+<body>
+
+  <h1>Simple Interest Calculator</h1>
+
+  <form>
+    <label for="principal">Principal Amount:</label>
+    <input type="number" id="principal" placeholder="Enter principal amount" required>
+
+    <label for="rate">Interest Rate (%):</label>
+    <input type="number" id="rate" placeholder="Enter interest rate" required>
+
+    <label for="time">Time Period (in years):</label>
+    <input type="number" id="time" placeholder="Enter time period" required>
+
+    <button type="button" onclick="calculateSimpleInterest()">Calculate</button>
+  </form>
+
+  <div id="result"></div>
+
+</body>
+</html>
